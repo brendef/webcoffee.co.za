@@ -37,8 +37,12 @@ p {
 
 .btn:hover {
   background: #eaeaea;
-  /* border: 1px dashed black; */
   color: #333;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
 }
 
 /* Navbar */
@@ -51,6 +55,14 @@ p {
 
 .nav > .nav-header {
   display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+  float: left;
 }
 
 .nav > .nav-btn {
@@ -94,15 +106,99 @@ p {
 
 #showcase .content-wrap,
 #section-a .content-wrap {
-  padding: 0 7.5em;
+  padding: 0 1.5em;
 }
 
+#section-a .content-text {
+  columns: 2;
+  column-gap: 2em;
+}
+
+#section-a .content-text p {
+  padding-top: 0;
+}
+
+.content-wrap,
+#section-b ul {
+  grid-column: 2 / 4;
+}
+
+.box,
+#main-footer div {
+  grid-column: span 2;
+}
+
+#section-b ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+#section-b li {
+  width: 31%;
+}
+
+#main-footer {
+  padding: 2em;
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+.copyright {
+  text-align: center;
+}
+
+#main-footer a {
+  color: #2690d4;
+  text-decoration: none;
+  padding-left: 20px;
+}
 
 /* Media Queries */
 @media(max-width: 700px) {
-  #showcase .content-wrap,
-  #section-a .content-wrap {
-    padding: 0 1.5em;
+  /* Section A */
+  #section-a {
+    background: #eaeaea;
+    color: #333;
+    padding-bottom: 2em;
+  }
+
+  /* Section B */
+  #section-b {
+    padding: 2em 1em 1em;
+  }
+
+  #section-b ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #section-b li {
+    margin-bottom: 1em;
+    background: white;
+    color: #333;
+  }
+
+  .card-content {
+    padding: 1.5em;
+  }
+
+  /* Section C */
+  #section-c {
+    background: white;
+    color: #333;
+    padding: 2em;
+  }
+
+  /* Section D */
+  #section-d .box {
+    padding: 2em;
+    color: white;
+  }
+
+  #section-d .box:first-child {
+    background: #2690d4;
   }
 }
 
